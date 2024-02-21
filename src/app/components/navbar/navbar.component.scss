@@ -1,0 +1,133 @@
+$hoverBackground: #dfd3d3;
+.navbar {
+  position: fixed;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: red;
+  padding: 0.8rem 1.2rem 2rem;
+  color: black;
+  background: white;
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  &-header {
+    padding: 2.5rem 1.2rem 1.6rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    &-main {
+      list-style-type: none;
+      li {
+        font-size: 1.6rem;
+        font-weight: 400;
+        padding: 1.6rem;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          border-radius: 10px;
+          cursor: pointer;
+          background-color: $hoverBackground;
+        }
+
+        i {
+          margin-right: 1.6rem;
+          font-size: 2rem;
+        }
+      }
+    }
+
+    &-more {
+      position: relative;
+      margin-top: auto;
+      font-size: 1.6rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      transition: all 0.15s;
+      i {
+        margin-right: 1.6rem;
+        font-size: 2rem;
+      }
+
+      div:nth-child(1) {
+        padding: 1.6rem;
+        width: 100%;
+        transform: scale(1);
+        opacity: 1;
+
+        &:hover {
+          border-radius: 10px;
+          cursor: pointer;
+          background-color: $hoverBackground;
+        }
+      }
+
+      &_content {
+        position: absolute;
+        top: 0%;
+        transform: translate(0, -100%);
+        left: 0;
+        width: 280px;
+        background-color: white;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.list_content-more {
+  list-style-type: none;
+  border:1px solid gray;
+  border-radius: 10px;
+  li {
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 1.6rem;
+    display: flex;
+    align-items: center;
+    margin:0.5rem;
+    &:hover {
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: $hoverBackground;
+    }
+  }
+
+  li:nth-child(7) {
+    div {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      i{
+        display:none;
+      }
+    }
+    &:hover{
+      div{
+        i{
+          opacity: 0.5;
+          display:block;
+        }
+      }
+    }
+  }
+}
+
+.tranformSmall {
+  font-size: 1.4rem;
+  color: #3b3b3b;
+}
+
