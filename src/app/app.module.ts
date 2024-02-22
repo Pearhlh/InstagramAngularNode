@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -10,14 +10,16 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {StoryListComponent} from './components/story-list/story-list.component';
 import {StoryItemComponent} from './components/story-item/story-item.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbCarousel, NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
+import { PostViewComponent } from './components/post-view/post-view.component';
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, NavbarComponent, StoryListComponent, StoryItemComponent, HeaderComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule, BrowserAnimationsModule],
+  declarations: [AppComponent, RegisterComponent, NavbarComponent, StoryListComponent, StoryItemComponent, HeaderComponent, PostViewComponent],
+  imports: [BrowserModule, AppRoutingModule, BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule, BrowserAnimationsModule, NgbCarouselModule],
   providers: [],
-  bootstrap: [AppComponent,]
+  bootstrap: [AppComponent,],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
 }
