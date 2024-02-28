@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StoryListComponent } from './story-list.component';
+import { PostGroupComponent } from './post-group.component';
 
-describe('StoryListComponent', () => {
-  let component: StoryListComponent;
-  let fixture: ComponentFixture<StoryListComponent>;
+describe('PostGroupComponent', () => {
+  let component: PostGroupComponent;
+  let fixture: ComponentFixture<PostGroupComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [StoryListComponent]
+      declarations: [PostGroupComponent]
     });
-    fixture = TestBed.createComponent(StoryListComponent);
+    fixture = TestBed.createComponent(PostGroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

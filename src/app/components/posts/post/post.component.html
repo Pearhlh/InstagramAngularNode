@@ -1,0 +1,57 @@
+<div class="card">
+  <div class="introduce">
+    <div class="introduce_avatar">
+      <img
+        src="https://vignette.wikia.nocookie.net/lesfootballeursdanslemonde/images/7/73/Virgil_van_Dijk.jpg/revision/latest?cb=20180802105345&path-prefix=fr"
+        alt=""
+      />
+    </div>
+    <div class="introduce_name">virgilvandijk</div>
+    <div class="introduce_seperate"><i class="bx bxs-circle"></i></div>
+    <div class="introduce_time">1h</div>
+    <div class="introduce_seperate"><i class="bx bxs-circle"></i></div>
+    <div class="introduce_follow">Follow</div>
+  </div>
+  <div class="content_image">
+    <ngb-carousel>
+      <ng-template ngbSlide *ngFor="let image of images2">
+        <div class="picsum-img-wrapper">
+          <img [src]="image" alt="Random first slide" />
+        </div>
+      </ng-template>
+    </ngb-carousel>
+    <div class="button_bar">
+      <button (click)="getToPrev()">
+        <i class="bx bx-chevron-left"></i>
+      </button>
+      <button (click)="goToNext()">
+        <i class="bx bx-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+  <div class="action">
+    <div>
+      <div class="icon heart">
+        <i class="bx bx-heart"></i>
+      </div>
+      <div class="icon comment">
+        <i class="bx bx-comment"></i>
+      </div>
+      <div class="icon share">
+        <i class="bx bx-navigation"></i>
+      </div>
+    </div>
+    <div class="book-mark">
+      <i class="bx bx-bookmark"></i>
+    </div>
+  </div>
+  <div class="caption">
+    <p>
+      <span class="owner">virgilvandijk</span>
+      That’s for you, LIVERPOOL! ❤️
+    </p>
+  </div>
+  <div class="comment_view">View all 446 comments</div>
+  <input type="text" class="add_comment" placeholder="Add a comment…" />
+  <div class="seperate_line"></div>
+</div>

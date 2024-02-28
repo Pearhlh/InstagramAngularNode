@@ -1,0 +1,41 @@
+<div id="wrapper">
+  <div class="container">
+    <form class="sign-in-form">
+      <h2>Login</h2>
+      <div class="row-control">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input type="text" matInput placeholder="Email"/>
+        </mat-form-field>
+      </div>
+      <div class="row-control">
+        <mat-form-field appearance="outline">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" id="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="row-control row-actions">
+        <button
+          color="primary"
+          mat-raised-button
+          class="button login"
+        >Login
+        </button>
+        <!--        <button [ngStyle]="{ 'background': 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)','color':'white'}" mat-raised-button type="submit">Register</button>-->
+      </div>
+      <div class="row-control row-actions">
+        <button
+          color="primary"
+          class="button register"
+          routerLink="/auth/register"
+          mat-raised-button type="submit">Register
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>

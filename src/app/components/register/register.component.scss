@@ -1,0 +1,84 @@
+$backgroundColor: #4055b8;
+#wrapper {
+  height: 100vh;
+  width: 100vw;
+  background: $backgroundColor;
+}
+
+.container {
+  width: min-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  h2{
+    text-align: center;
+  }
+  form {
+    padding: 4rem;
+    border-radius: 2rem;
+    background-color: white;
+  }
+}
+
+.row-control {
+  display: flex;
+
+  mat-form-field {
+    margin-right: 2rem;
+    flex: 1;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .email-input {
+    height: min-content;
+  }
+
+  img {
+    width: 120px;
+    height: 120px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.27);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+.avatar{
+  position: relative;
+  border-radius: 1rem;
+  .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 1rem;
+    background-color: rgba(59, 59, 59, 0.58);
+    display: none;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  &:hover{
+    .overlay{
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.row-actions{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  .button{
+      width: 50%;
+  }
+}

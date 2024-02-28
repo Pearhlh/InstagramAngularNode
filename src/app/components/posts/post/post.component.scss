@@ -1,0 +1,151 @@
+.card {
+  width: 60%;
+  margin: 2rem auto 0 auto;
+  padding: 20px;
+  border: none;
+  .introduce {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    &_avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 100%;
+      overflow: hidden;
+      margin-right: 10px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    &_name {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-right: 6px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &_seperate {
+      font-size: 0.55rem;
+      color: rgba(128, 128, 128, 0.6);
+    }
+    &_time {
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: rgb(102, 98, 98);
+      margin: 0 6px;
+    }
+    &_follow {
+      color: #0065f6;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-left: 6px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .content_image {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    img {
+      width: 100%;
+      height: 550px;
+      object-fit: cover;
+      object-position: center;
+    }
+    .button_bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      button {
+        outline: none;
+        border: none;
+        height: 26px;
+        width: 26px;
+        border-radius: 100rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 5px;
+        background-color: #e8e8efe0;
+        i {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+  .action {
+    margin-top: 1rem;
+    font-size: 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div:nth-child(1) {
+      display: flex;
+      align-items: center;
+      .icon {
+        display: flex;
+        align-items: center;
+        margin: 0 0.8rem;
+        &:nth-child(1) {
+          margin-left: 0;
+        }
+        color: black;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.6;
+        }
+      }
+    }
+    .book-mark {
+      &:hover {
+        cursor: pointer;
+        opacity: 0.6;
+      }
+    }
+  }
+  .seperate_line {
+    width: 100%;
+    margin-top: 0.5rem;
+    border: 1px solid #4d49492f;
+  }
+}
+.caption {
+  font-size: 1.3rem;
+  p {
+    margin-bottom: 0.6rem;
+  }
+  .owner {
+    font-weight: 600;
+  }
+}
+.comment_view {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: gray;
+  margin-bottom: 0.6rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.add_comment {
+  outline: none;
+  border: none;
+  font-size: 1.4rem;
+
+  &::placeholder {
+    font-weight: 400;
+    color: rgba(128, 128, 128, 1);
+  }
+}
