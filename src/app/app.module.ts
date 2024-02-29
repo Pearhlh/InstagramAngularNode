@@ -21,6 +21,7 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import {MatIconModule} from "@angular/material/icon";
 import { LoginComponent } from './components/login/login.component';
+import {CommonModule, DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { LoginComponent } from './components/login/login.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NgbCarouselModule,
+    CommonModule,
     // Angular Material
     MatButtonModule,
     MatFormFieldModule,
@@ -55,7 +57,9 @@ import { LoginComponent } from './components/login/login.component';
     MatIconModule
     //
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

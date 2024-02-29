@@ -1,21 +1,31 @@
 <div id="wrapper">
   <div class="container">
-    <form class="sign-in-form">
+    <form class="sign-in-form" [formGroup]="loginFormGroup">
       <h2>Login</h2>
+
       <div class="row-control">
         <mat-form-field appearance="outline">
           <mat-label>Email</mat-label>
-          <input type="text" matInput placeholder="Email"/>
+          <input type="text" matInput placeholder="Email" formControlName="id"/>
+          <mat-error *ngIf="loginFormGroup.touched || loginFormGroup.get('id')?.valid">
+            <span *ngIf="loginFormGroup.get('id')?.errors?.['required']">The username is required</span>
+            <span
+              *ngIf="loginFormGroup.get('id')?.errors?.['minlength'] || loginFormGroup.get('id')?.errors?.['maxlength']">Length from 6 to 32 characters</span>
+          </mat-error>
         </mat-form-field>
       </div>
       <div class="row-control">
         <mat-form-field appearance="outline">
           <mat-label>Enter your password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'" id="password">
+          <input matInput [type]="hide ? 'password' : 'text'" id="password" formControlName="password">
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                   [attr.aria-pressed]="hide">
             <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
           </button>
+          <mat-error *ngIf="loginFormGroup.touched || loginFormGroup.get('password')?.valid">
+            <span *ngIf="loginFormGroup.get('password')?.errors?.['required']">The password is required</span>
+
+          </mat-error>
         </mat-form-field>
       </div>
       <div class="row-control row-actions">
@@ -23,6 +33,7 @@
           color="primary"
           mat-raised-button
           class="button login"
+          (click)="submit()"
         >Login
         </button>
         <!--        <button [ngStyle]="{ 'background': 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)','color':'white'}" mat-raised-button type="submit">Register</button>-->

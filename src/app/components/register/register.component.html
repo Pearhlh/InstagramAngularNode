@@ -1,59 +1,65 @@
 <div id="wrapper">
   <div class="container">
-    <form class="sign-in-form">
+    <form class="sign-in-form" [formGroup]="registerForm">
       <h2>Register</h2>
       <div class="row-control">
         <mat-form-field appearance="outline">
           <mat-label>First name</mat-label>
-          <input matInput placeholder="First name"/>
+          <input matInput placeholder="First name" formControlName="firstName"/>
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Last name</mat-label>
-          <input type="text" matInput placeholder="Last name"/>
+          <input type="text" matInput placeholder="Last name" formControlName="lastName"/>
         </mat-form-field>
       </div>
       <div class="row-control">
         <mat-form-field appearance="outline">
           <mat-label>Profile name</mat-label>
-          <input type="text" matInput placeholder="Profile name"/>
+          <input type="text" matInput placeholder="Profile name" formControlName="profileName"/>
         </mat-form-field>
         <mat-form-field appearance="outline">
-          <mat-label>Choose a date</mat-label>
-          <input matInput [matDatepicker]="picker">
+          <mat-label>Date of birth</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dob">
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         <mat-form-field appearance="outline">
           <mat-label>Gender</mat-label>
-          <mat-select>
+          <mat-select formControlName="gender">
             <mat-option *ngFor="let gender of genders" [value]="gender.value">{{ gender.viewValue }}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
       <div class="row-control">
         <mat-form-field appearance="outline">
-          <mat-label>Enter your password</mat-label>
-          <input matInput [type]="hide ? 'password' : 'text'" id="password">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                  [attr.aria-pressed]="hide">
-            <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
-          </button>
+          <mat-label>ID</mat-label>
+          <input type="text" matInput placeholder="ID" formControlName="id"/>
         </mat-form-field>
-      </div>
-      <div class="row-control">
         <mat-form-field appearance="outline">
-          <mat-label>Confirm password</mat-label>
-          <input matInput type="password" id="confirm_password">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput placeholder="Email@example.com" formControlName="email"/>
         </mat-form-field>
+
       </div>
       <div class="row-control">
-        <mat-form-field appearance="outline" class="email-input">
-          <mat-label>Email</mat-label>
-          <input type="email" matInput placeholder="Email@example.com"/>
-        </mat-form-field>
+        <div style="flex:1;display: flex;flex-direction: column">
+          <mat-form-field appearance="outline" class="password">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" id="password" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+              <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="password" style="margin-right: 2rem">
+            <mat-label>Confirm password</mat-label>
+            <input matInput type="password" id="confirm_password" formControlName="confirmPassword">
+          </mat-form-field>
+        </div>
         <div class="avatar">
-          <input type="file" accept="image/*" id="avatar" style="display: none" (change)="getUrl($event)">
-          <div>
+          <input type="file" accept="image/*" id="avatar" style="display: none" (change)="getUrl($event)"
+                 formControlName="image">
+          <div style="position: relative;">
             <label for="avatar">
               <img [src]="avatarUrl">
               <div class="overlay">
@@ -61,6 +67,7 @@
               </div>
             </label>
           </div>
+          <p style="text-align: center;font-weight: 500;">Avatar</p>
         </div>
       </div>
 
@@ -69,19 +76,18 @@
           color="primary"
           mat-raised-button
           class="button login"
-          >Register
+          (click)="submit()"
+        >Register
         </button>
         <!--        <button [ngStyle]="{ 'background': 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)','color':'white'}" mat-raised-button type="submit">Register</button>-->
       </div>
-      <div class="row-control row-actions">
-        <button
-          color="primary"
-          class="button register"
-          routerLink="/auth/login"
-          mat-raised-button type="submit">Login
-        </button>
-      </div>
+      <button
+        class="button register"
+        routerLink="/auth/login"
+        type="submit">
+        <i class='bx bx-chevron-left'></i>
+        Back
+      </button>
     </form>
   </div>
-
 </div>

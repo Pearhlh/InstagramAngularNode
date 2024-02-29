@@ -10,10 +10,13 @@ $backgroundColor: #4055b8;
   height: 100%;
   display: flex;
   align-items: center;
-  h2{
+
+  h2 {
     text-align: center;
   }
+
   form {
+    position: relative;
     padding: 4rem;
     border-radius: 2rem;
     background-color: white;
@@ -32,7 +35,7 @@ $backgroundColor: #4055b8;
     }
   }
 
-  .email-input {
+  .password {
     height: min-content;
   }
 
@@ -43,15 +46,18 @@ $backgroundColor: #4055b8;
     object-fit: cover;
     border-radius: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.27);
+
     &:hover {
       cursor: pointer;
     }
   }
 }
-.avatar{
+
+.avatar {
   position: relative;
   border-radius: 1rem;
-  .overlay{
+
+  .overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -59,26 +65,53 @@ $backgroundColor: #4055b8;
     right: 0;
     border-radius: 1rem;
     background-color: rgba(59, 59, 59, 0.58);
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: rgba(255, 255, 255, 0.88);
     font-size: 1.4rem;
     font-weight: 500;
+    opacity: 0;
+    transition: all 0.4s;
   }
-  &:hover{
-    .overlay{
+
+  &:hover {
+    .overlay {
       cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      opacity: 1;
     }
   }
 }
 
-.row-actions{
+.row-actions {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
-  .button{
-      width: 50%;
+
+  .button {
+    width: 50%;
+  }
+}
+
+.register {
+  position: absolute !important;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  outline: none;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+  transition: all 0.3s;
+  i{
+    margin-right: 0.8rem;
+  }
+  &:hover{
+    cursor: pointer;
+    background: rgba(128, 128, 128, 0.2);
   }
 }
