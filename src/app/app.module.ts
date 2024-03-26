@@ -16,12 +16,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import {MatDatepickerModule} from "@angular/material/datepicker";
-import {MatNativeDateModule} from "@angular/material/core";
-import {MatSelectModule} from "@angular/material/select";
-import {MatIconModule} from "@angular/material/icon";
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './components/login/login.component';
-import {CommonModule, DatePipe} from "@angular/common";
+import { CommonModule, DatePipe } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import {CommonModule, DatePipe} from "@angular/common";
     PostGroupComponent,
     RegisterComponent,
     LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import {CommonModule, DatePipe} from "@angular/common";
     BrowserAnimationsModule,
     NgbCarouselModule,
     CommonModule,
+    RouterModule,
     // Angular Material
     MatButtonModule,
     MatFormFieldModule,
@@ -54,12 +58,10 @@ import {CommonModule, DatePipe} from "@angular/common";
     MatNativeDateModule,
     //
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
     //
   ],
-  providers: [
-    DatePipe
-  ],
+  providers: [DatePipe],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

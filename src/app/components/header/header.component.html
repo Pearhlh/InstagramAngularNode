@@ -1,16 +1,81 @@
 <div class="wrapper">
-  <div>
-    <span><i class='bx bx-user'></i></span>
-    <input type="text" placeholder="Write down something...">
-  </div>
-  <div>
-    <div>
-      <i class='bx bx-image'></i>
-      <i class='bx bx-happy-alt'></i>
-      <i class='bx bx-location-plus'></i>
+  <div class="about">
+    <div class="image">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr37IH21bYP-VgzRhA3zcL75fSRDS0bb2d1ApGwZpIOw&s"
+        alt=""
+      />
     </div>
-    <button type="button">
-      Post
-    </button>
+    <div class="post">
+      <input type="text" (click)="open(content)" />
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Tạo bài viết</h4>
+          <button (click)="modal.dismiss('Cross click')" class="btn_close">
+            <i class="bx bx-x"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-about">
+            <div class="image">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr37IH21bYP-VgzRhA3zcL75fSRDS0bb2d1ApGwZpIOw&s"
+                alt=""
+              />
+            </div>
+            <div class="myself">
+              <h4>Le Gia Huy</h4>
+              <button>
+                <i class="bx bxs-user"></i>
+                <span>Công khai</span>
+                <i class="bx bxs-chevron-down"></i>
+              </button>
+            </div>
+          </div>
+          <div class="modal-caption">
+            <input
+              type="text"
+              class="caption"
+              placeholder="Bạn đang nghĩ gì đó"
+            />
+            <i class="bx bx-smile"></i>
+          </div>
+          <div class="modal-image">
+            <img
+              [src]="imageUrl"
+              alt=""
+              class="image_user"
+              [class.hidden]="imageUrl.length == 0"
+            />
+            <div class="user_control_image">
+              <button class="btn_close" (click)="clearUrl()">
+                <i class="bx bx-x"></i>
+              </button>
+              <label for="image" [class.hidden]="imageUrl.length != 0">
+                <div>
+                  <button><i class="bx bxs-image-add"></i></button>
+                  <p>Thêm ảnh/video</p>
+                  <p>hoặc kéo và thả</p>
+                </div>
+              </label>
+              <input
+                type="file"
+                id="image"
+                style="display: none"
+                (change)="getUrl($event)"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button>Đăng</button>
+          </div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  <div class="function">
+    <button class="camera"><i class="bx bx-camera-movie"></i>Live</button>
+    <button class="image"><i class="bx bxs-image"></i>Ảnh/Video</button>
+    <button class="action"><i class="bx bx-smile"></i>Cảm xúc</button>
   </div>
 </div>
